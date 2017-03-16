@@ -3,6 +3,8 @@ var app = express();
 var fs = require('fs');
 var path = require('path');
 
+var port = process.env.PORT||8080;
+
 app.get('/',function(req,res){
   var fileName = path.join(__dirname, 'index.html');
   res.sendFile(fileName, function(err){
@@ -35,4 +37,4 @@ app.use('/', function (req, res) {
   }
 });
 
-app.listen(8080);
+app.listen(port);
